@@ -41,3 +41,23 @@ function mkHtml(datas) {
     </ul>
     */
 }
+
+function ajoutLivre (e) {
+    e.preventDefault();
+
+    let ref = document.getElementById("ref");
+    let titre = document.getElementById("titre");
+    let auteur = document.getElementById("auteur");
+
+    livres.push({
+        ref: ref.value,
+        titre: titre.value,
+        auteur: auteur.value
+    });
+
+    console.log(livres);
+}
+
+/** LISTENERS */
+
+document.getElementById("ajoutLivre").addEventListener("submit", ajoutLivre);
