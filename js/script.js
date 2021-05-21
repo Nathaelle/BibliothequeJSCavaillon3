@@ -23,22 +23,18 @@ let livres = [livre1, livre2, livre3];
 
 function mkHtml(datas) {
 
-    let html = "<ul>";
+    let html = "";
 
         for(let livre of datas) {
             html += "<li>" + livre.titre + ", par " + livre.auteur + "</li>";
         }
 
-    html += "</ul>";
-
     return html;
 
     /*
-    <ul>
-        <li>Les Misérables, par Victor Hugo</li>
-        <li>L'Iliade et l'Odyssée, par Homère</li>
-        <li>1984, par George Orwell</li>
-    </ul>
+    <li>Les Misérables, par Victor Hugo</li>
+    <li>L'Iliade et l'Odyssée, par Homère</li>
+    <li>1984, par George Orwell</li>
     */
 }
 
@@ -55,8 +51,17 @@ function ajoutLivre (e) {
         auteur: auteur.value
     });
 
-    console.log(livres);
+    listUpdate(mkHtml(livres));
 }
+
+function listUpdate(htmlString) {
+
+    document.getElementById("livres").innerHTML = htmlString; 
+}
+
+/** Init */
+
+listUpdate(mkHtml(livres));
 
 /** LISTENERS */
 
