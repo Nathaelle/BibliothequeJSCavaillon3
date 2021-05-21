@@ -19,3 +19,25 @@ let livre3 = {
 }
 
 let livres = [livre1, livre2, livre3];
+
+
+function mkHtml(datas) {
+
+    let html = "<ul>";
+
+        for(let livre of datas) {
+            html += "<li>" + livre.titre + ", par " + livre.auteur + "</li>";
+        }
+
+    html += "</ul>";
+
+    return html;
+
+    /*
+    <ul>
+        <li>Les Misérables, par Victor Hugo</li>
+        <li>L'Iliade et l'Odyssée, par Homère</li>
+        <li>1984, par George Orwell</li>
+    </ul>
+    */
+}
